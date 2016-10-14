@@ -138,7 +138,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="UI\Sources\UIItemListViewSource.cs" />
     <Compile Include="UI\Widgets\UIItemListView.cs" />
-    <Compile Include="UI\Widgets\UIToast.cs" />
     <Compile Include="UI\SubController\TaskListViewController.cs" />
     <Compile Include="UI\SubController\TaskListViewController.designer.cs">
       <DependentUpon>TaskListViewController.cs</DependentUpon>
@@ -163,6 +162,8 @@
     <Compile Include="UI\MainController\SplashViewController.designer.cs">
       <DependentUpon>SplashViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MainController\%40ViewController.cs" />
+    <Compile Include="UI\SubController\%40SubController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Layouts\" />
@@ -175,6 +176,14 @@
     <InterfaceDefinition Include="Resources\Layouts\TaskListViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\RegistrationViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\TaskViewController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UI\.DS_Store" />
+    <BundleResource Include="Resources\UI\Activity\%40Activity.cs" />
+    <BundleResource Include="Resources\UI\Activity\MainActivity.axml" />
+    <BundleResource Include="Resources\UI\Adapters\ItemRecyclerAdapter.cs" />
+    <BundleResource Include="Resources\UI\Fragments\%40Fragment.cs" />
+    <BundleResource Include="Resources\UI\Widgets\ItemRecyclerView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

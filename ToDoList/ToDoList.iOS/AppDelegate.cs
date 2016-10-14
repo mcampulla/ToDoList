@@ -19,6 +19,11 @@ namespace ToDoList.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+
+            this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
+            this.Window.RootViewController = new SplashViewController();
+            this.Window.MakeKeyAndVisible();
+
 			return true;
 		}
 

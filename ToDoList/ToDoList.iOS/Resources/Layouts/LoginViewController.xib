@@ -17,15 +17,12 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q2-F0-2fn">
-                    <state key="normal" title="Register"/>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-hO-ERo">
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIE-Ut-1uy">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIE-Ut-1uy">
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -35,31 +32,35 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmV-Ln-19t">
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmV-Ln-19t">
                             <state key="normal" title="Login"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q2-F0-2fn">
+                            <state key="normal" title="Register"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="120" id="6wp-4s-W6y"/>
+                        <constraint firstAttribute="height" constant="150" id="6wp-4s-W6y"/>
                         <constraint firstAttribute="width" constant="240" id="GHN-YV-9yL"/>
+                        <constraint firstItem="MIE-Ut-1uy" firstAttribute="top" secondItem="aWZ-hO-ERo" secondAttribute="top" id="GX9-Jz-7YW"/>
                         <constraint firstItem="MIE-Ut-1uy" firstAttribute="width" secondItem="aWZ-hO-ERo" secondAttribute="width" id="HGY-V0-c4v"/>
+                        <constraint firstItem="2q2-F0-2fn" firstAttribute="centerX" secondItem="aWZ-hO-ERo" secondAttribute="centerX" id="Oh3-cd-Cjv"/>
                         <constraint firstItem="OmV-Ln-19t" firstAttribute="width" secondItem="aWZ-hO-ERo" secondAttribute="width" id="PLZ-J7-Ys2"/>
                         <constraint firstItem="XGP-VN-Lzf" firstAttribute="width" secondItem="aWZ-hO-ERo" secondAttribute="width" id="Pfh-Of-cgY"/>
                         <constraint firstItem="MIE-Ut-1uy" firstAttribute="centerX" secondItem="aWZ-hO-ERo" secondAttribute="centerX" id="Pk2-mm-Npg"/>
-                        <constraint firstAttribute="bottom" secondItem="OmV-Ln-19t" secondAttribute="bottom" constant="10" id="W3T-lF-ja1"/>
+                        <constraint firstItem="2q2-F0-2fn" firstAttribute="top" secondItem="OmV-Ln-19t" secondAttribute="bottom" constant="10" id="Wr5-In-nIf"/>
                         <constraint firstItem="XGP-VN-Lzf" firstAttribute="centerX" secondItem="aWZ-hO-ERo" secondAttribute="centerX" id="YZv-xC-wrq"/>
+                        <constraint firstItem="XGP-VN-Lzf" firstAttribute="top" secondItem="MIE-Ut-1uy" secondAttribute="bottom" constant="10" id="Yzc-bQ-ru1"/>
                         <constraint firstItem="OmV-Ln-19t" firstAttribute="centerX" secondItem="aWZ-hO-ERo" secondAttribute="centerX" id="ZKb-gw-0DT"/>
-                        <constraint firstItem="MIE-Ut-1uy" firstAttribute="top" secondItem="aWZ-hO-ERo" secondAttribute="top" id="hHX-pQ-anZ"/>
-                        <constraint firstItem="OmV-Ln-19t" firstAttribute="top" secondItem="XGP-VN-Lzf" secondAttribute="bottom" constant="10" id="jYc-Z3-vz4"/>
+                        <constraint firstItem="2q2-F0-2fn" firstAttribute="width" secondItem="aWZ-hO-ERo" secondAttribute="width" id="xwN-e0-OWd"/>
+                        <constraint firstItem="OmV-Ln-19t" firstAttribute="top" secondItem="XGP-VN-Lzf" secondAttribute="bottom" constant="10" id="z0g-m0-BDp"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2q2-F0-2fn" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="45d-ln-uWM"/>
                 <constraint firstItem="aWZ-hO-ERo" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="8xO-QS-wb1"/>
-                <constraint firstAttribute="bottom" secondItem="2q2-F0-2fn" secondAttribute="bottom" constant="20" symbolic="YES" id="ReL-VY-xi1"/>
                 <constraint firstItem="aWZ-hO-ERo" firstAttribute="top" secondItem="2" secondAttribute="top" constant="60" id="Zbf-Kh-lFr"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>

@@ -1,4 +1,4 @@
-namespace AdMaiora.Chatty
+namespace ToDoList.iOS
 {
     using System;
     using System.Collections.Generic;
