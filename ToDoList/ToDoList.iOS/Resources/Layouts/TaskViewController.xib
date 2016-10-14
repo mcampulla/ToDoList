@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskViewController">
+            <connections>
+                <outlet property="DataText" destination="zxZ-iR-M2d" id="a7J-46-ORE"/>
+                <outlet property="DescriptionText" destination="cis-b4-1GQ" id="GBY-Z8-Avb"/>
+                <outlet property="TagsText" destination="PEw-m7-Q7N" id="XMo-zr-wIK"/>
+                <outlet property="TitleText" destination="xtG-KJ-8Rm" id="46O-aD-f5r"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOo-tR-w5E">
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtG-KJ-8Rm">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cis-b4-1GQ">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxZ-iR-M2d">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="ZPM-pi-prq"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-m7-Q7N">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="khh-vu-Z49"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zxZ-iR-M2d" firstAttribute="bottom" secondItem="PEw-m7-Q7N" secondAttribute="top" constant="-10" id="A8r-ds-88s"/>
+                        <constraint firstItem="xtG-KJ-8Rm" firstAttribute="top" secondItem="dOo-tR-w5E" secondAttribute="top" constant="10" id="Hyb-Hk-wNJ"/>
+                        <constraint firstAttribute="width" constant="300" id="ICT-am-cXx"/>
+                        <constraint firstItem="xtG-KJ-8Rm" firstAttribute="width" secondItem="dOo-tR-w5E" secondAttribute="width" id="Jsg-tz-A7C"/>
+                        <constraint firstItem="cis-b4-1GQ" firstAttribute="centerX" secondItem="dOo-tR-w5E" secondAttribute="centerX" id="Kbu-6Y-Vyj"/>
+                        <constraint firstItem="PEw-m7-Q7N" firstAttribute="width" secondItem="dOo-tR-w5E" secondAttribute="width" id="PUX-jc-wY2"/>
+                        <constraint firstItem="zxZ-iR-M2d" firstAttribute="width" secondItem="dOo-tR-w5E" secondAttribute="width" id="RuY-Ta-SKr"/>
+                        <constraint firstItem="xtG-KJ-8Rm" firstAttribute="centerX" secondItem="dOo-tR-w5E" secondAttribute="centerX" id="Wpq-VP-2Zf"/>
+                        <constraint firstItem="zxZ-iR-M2d" firstAttribute="centerX" secondItem="dOo-tR-w5E" secondAttribute="centerX" id="XtU-Zc-Krn"/>
+                        <constraint firstItem="PEw-m7-Q7N" firstAttribute="centerX" secondItem="dOo-tR-w5E" secondAttribute="centerX" id="iRg-LY-dgP"/>
+                        <constraint firstItem="cis-b4-1GQ" firstAttribute="bottom" secondItem="zxZ-iR-M2d" secondAttribute="top" constant="-10" id="rfA-dR-Jy6"/>
+                        <constraint firstItem="cis-b4-1GQ" firstAttribute="width" secondItem="dOo-tR-w5E" secondAttribute="width" id="rjD-8f-PG2"/>
+                        <constraint firstAttribute="bottom" secondItem="PEw-m7-Q7N" secondAttribute="bottom" constant="10" id="tlx-4l-7hF"/>
+                        <constraint firstItem="cis-b4-1GQ" firstAttribute="top" secondItem="xtG-KJ-8Rm" secondAttribute="bottom" constant="8" symbolic="YES" id="vCX-wr-GFS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dOo-tR-w5E" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="F3g-Pv-bOz"/>
+                <constraint firstItem="dOo-tR-w5E" firstAttribute="top" secondItem="2" secondAttribute="top" id="K4Z-pP-O7R"/>
+                <constraint firstItem="dOo-tR-w5E" firstAttribute="height" secondItem="2" secondAttribute="height" id="nIz-lW-P4R"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
