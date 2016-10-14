@@ -4,9 +4,9 @@ using UIKit;
 
 namespace ToDoList.iOS
 {
-    public partial class MainViewController : UIViewController
+    public partial class MainViewController : UINavigationController
     {
-        public MainViewController () : base ("MainViewController", null)
+        public MainViewController () 
         {
         }
 
