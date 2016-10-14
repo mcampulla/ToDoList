@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController">
+            <connections>
+                <outlet property="PasswordText" destination="XkX-24-e72" id="HjY-CE-RVt"/>
+                <outlet property="RegisterButton" destination="etd-NY-zbU" id="bmu-lU-IIV"/>
+                <outlet property="UsernameText" destination="knG-WS-0LU" id="NhQ-IW-H63"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-6B-YTU">
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knG-WS-0LU">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XkX-24-e72">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etd-NY-zbU">
+                            <state key="normal" title="Register"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="knG-WS-0LU" firstAttribute="top" secondItem="yUX-6B-YTU" secondAttribute="top" id="1gm-fa-Yxa"/>
+                        <constraint firstItem="XkX-24-e72" firstAttribute="centerX" secondItem="yUX-6B-YTU" secondAttribute="centerX" id="52Z-W3-QAq"/>
+                        <constraint firstItem="knG-WS-0LU" firstAttribute="centerX" secondItem="yUX-6B-YTU" secondAttribute="centerX" id="CRJ-EL-beb"/>
+                        <constraint firstItem="XkX-24-e72" firstAttribute="top" secondItem="knG-WS-0LU" secondAttribute="bottom" constant="10" id="Dmc-Qf-WE7"/>
+                        <constraint firstItem="etd-NY-zbU" firstAttribute="top" secondItem="XkX-24-e72" secondAttribute="bottom" constant="10" id="FB0-8m-6JO"/>
+                        <constraint firstAttribute="width" constant="300" id="ZeX-O3-n0K"/>
+                        <constraint firstItem="etd-NY-zbU" firstAttribute="centerX" secondItem="yUX-6B-YTU" secondAttribute="centerX" id="clv-PJ-7S0"/>
+                        <constraint firstItem="knG-WS-0LU" firstAttribute="width" secondItem="yUX-6B-YTU" secondAttribute="width" id="mgs-eb-kOY"/>
+                        <constraint firstItem="etd-NY-zbU" firstAttribute="width" secondItem="yUX-6B-YTU" secondAttribute="width" id="qND-4a-k2S"/>
+                        <constraint firstItem="XkX-24-e72" firstAttribute="width" secondItem="yUX-6B-YTU" secondAttribute="width" id="vuE-tS-SIl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yUX-6B-YTU" secondAttribute="bottom" constant="455" id="60F-Sn-opx"/>
+                <constraint firstItem="yUX-6B-YTU" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" id="LRd-ad-IDM"/>
+                <constraint firstItem="yUX-6B-YTU" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="RLy-6A-HPl"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+        </view>
+    </objects>
+</document>
