@@ -1,4 +1,4 @@
-namespace ToDoList.Droid.UI.Activity
+namespace ToDoList.Droid.UI.Fragments
 {
     using System;
     using System.Collections.Generic;
@@ -8,21 +8,13 @@ namespace ToDoList.Droid.UI.Activity
 
     using Android.App;
     using Android.Content;
-    using Android.Content.PM;
-    using Android.Content.Res;
     using Android.OS;
     using Android.Runtime;
+    using Android.Util;
     using Android.Views;
     using Android.Widget;
 
-    [Activity(
-        Label = "ToDo List",
-        ScreenOrientation = ScreenOrientation.Portrait,
-        ConfigurationChanges =
-            ConfigChanges.Orientation | ConfigChanges.ScreenSize |
-            ConfigChanges.KeyboardHidden | ConfigChanges.Keyboard
-    )]
-    public class _Activity : Activity
+    public class TaskListFragment : Android.Support.V4.App.Fragment
     {
         #region Inner Classes
         #endregion
@@ -35,32 +27,37 @@ namespace ToDoList.Droid.UI.Activity
 
         #region Constructors
 
-        public _Activity()
+        public TaskListFragment()
         {
         }
 
         #endregion
 
         #region Properties
-
         #endregion
 
-        #region Activity Methods
+        #region Fragment Methods
 
-        protected override void OnCreate(Bundle bundle)
+        public override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
-            #region Desinger Stuff
-
-            SetContentView(0);
-
-            #endregion
         }
 
-        protected override void OnDestroy()
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnDestroy();
+            #region Desinger Stuff
+
+            View view = inflater.Inflate(Resource.Layout.FragmentTaskList, container, false);
+
+            #endregion           
+
+            return view;
+        }
+
+        public override void OnDestroyView()
+        {
+            base.OnDestroyView();
         }
 
         #endregion

@@ -1,4 +1,4 @@
-namespace AdMaiora.Chatty
+namespace ToDoList.Droid.UI.Fragments
 {
     using System;
     using System.Collections.Generic;

@@ -5,6 +5,7 @@ namespace ToDoList.Droid.UI.Activity
     using System.Linq;
     using System.Text;
     using System.Threading;
+    using System.Threading.Tasks;
 
     using Android.App;
     using Android.Content;
@@ -17,12 +18,13 @@ namespace ToDoList.Droid.UI.Activity
 
     [Activity(
         Label = "ToDo List",
+        MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges =
             ConfigChanges.Orientation | ConfigChanges.ScreenSize |
             ConfigChanges.KeyboardHidden | ConfigChanges.Keyboard
     )]
-    public class _Activity : Activity
+    public class SplashActivity : Activity
     {
         #region Inner Classes
         #endregion
@@ -35,7 +37,7 @@ namespace ToDoList.Droid.UI.Activity
 
         #region Constructors
 
-        public _Activity()
+        public SplashActivity()
         {
         }
 
@@ -53,9 +55,29 @@ namespace ToDoList.Droid.UI.Activity
 
             #region Desinger Stuff
 
-            SetContentView(0);
+            SetContentView(Resource.Layout.ActivitySplash);
 
             #endregion
+
+            // c#: delegati
+            // pattern: async await
+
+            // thread asincrono: quindi non posso fare operazioni visuali
+            Task.Factory.StartNew(() =>
+                {
+                    System.Threading.Thread.Sleep(2000);
+
+                }).ContinueWith((t) =>
+                {
+                    // specifico un job da fare sincronizzato con thread principale
+                    RunOnUiThread(() =>
+                    {
+                        StartActivity(typeof(MainActivity));
+                        Finish(); // termina l'activity corrente in cui sei
+                    });
+                });
+
+
         }
 
         protected override void OnDestroy()

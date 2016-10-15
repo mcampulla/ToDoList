@@ -14,15 +14,20 @@ namespace ToDoList.Droid.UI.Activity
     using Android.Runtime;
     using Android.Views;
     using Android.Widget;
+    using Fragments;
 
+    // i seguenti attributi verranno forzati nel manifest
+    // in realtà potrei svuotarli e fare tutto li, per non avere due posti in cui sono configurate le cose
     [Activity(
         Label = "ToDo List",
+        Theme = "@style/Theme.AppCompat.Light",
         ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges =
             ConfigChanges.Orientation | ConfigChanges.ScreenSize |
             ConfigChanges.KeyboardHidden | ConfigChanges.Keyboard
     )]
-    public class _Activity : Activity
+    
+    public class MainActivity : Android.Support.V7.App.AppCompatActivity
     {
         #region Inner Classes
         #endregion
@@ -35,7 +40,7 @@ namespace ToDoList.Droid.UI.Activity
 
         #region Constructors
 
-        public _Activity()
+        public MainActivity()
         {
         }
 
@@ -53,9 +58,16 @@ namespace ToDoList.Droid.UI.Activity
 
             #region Desinger Stuff
 
-            SetContentView(0);
+            SetContentView(Resource.Layout.ActivityMain);
 
             #endregion
+
+            // todo: controllare se si trova in situazione pulita da zero
+            // oppure se ha ripristinato lui i fragments e quindi trovo gia' qualcosa impostato
+
+            this.SupportFragmentManager.BeginTransaction()
+                .Add(Resource.Id.ContentLayout, new LoginFragment(), "LoginFragment")
+                .Commit();
         }
 
         protected override void OnDestroy()
