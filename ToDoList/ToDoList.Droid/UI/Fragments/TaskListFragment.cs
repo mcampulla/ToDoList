@@ -24,16 +24,19 @@ namespace ToDoList.Droid.UI.Fragments
             public TextView TitleLabel;
             public TextView DescriptionLabel;
 
-            public TaskListViewHolder(View view) : base(view)
+            public TaskListViewHolder(View view, Action<int> listener) : base(view)
             {
                 this.TitleLabel = view.FindViewById<TextView>(Resource.Id.TitleLabel);
                 this.DescriptionLabel = view.FindViewById<TextView>(Resource.Id.DescriptionLabel);
+
+                view.Click += (sender, e) => listener(Position);
             }
         }
 
         private class TaskListAdapter : RecyclerView.Adapter
         {
             private List<Poco.TodoItem> _tasks = null;
+            public event EventHandler<int> ItemClick;
 
             public TaskListAdapter(IEnumerable<Poco.TodoItem> items)
             {
@@ -48,6 +51,12 @@ namespace ToDoList.Droid.UI.Fragments
                 }
             }
 
+            void OnClick(int position)
+            {
+                if (ItemClick != null)
+                    ItemClick(this, position);
+            }
+
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
                 TaskListViewHolder h = (TaskListViewHolder)holder;
@@ -60,7 +69,7 @@ namespace ToDoList.Droid.UI.Fragments
             {
                 LayoutInflater inflater = LayoutInflater.From(parent.Context);
                 View view = inflater.Inflate(Resource.Layout.CellTask, parent, false);
-                RecyclerView.ViewHolder holder = new TaskListViewHolder(view);
+                RecyclerView.ViewHolder holder = new TaskListViewHolder(view, OnClick);
                 return holder;
             }
         }
@@ -121,10 +130,32 @@ namespace ToDoList.Droid.UI.Fragments
                 new Poco.TodoItem() { Title = "Title11", Description = "Description 11" },
                 new Poco.TodoItem() { Title = "Title12", Description = "Description 12" },
                 new Poco.TodoItem() { Title = "Title13", Description = "Description 13" }});
+
+            _adapter.ItemClick += _adapter_ItemClick;
+            
+            
             _taskList.SetLayoutManager(new LinearLayoutManager(this.Context));
             _taskList.SetAdapter(_adapter);
 
+             
+
             return view;
+        }
+
+        private void _adapter_ItemClick(object sender, int position)
+        {
+            //int photoNum = position + 1;
+            //Toast.MakeText(this.Context, "This is photo number " + photoNum, ToastLength.Short).Show();
+
+            Bundle arguments = new Bundle();
+            arguments.PutInt("id", position);
+            TaskFragment fragment = new TaskFragment();
+            fragment.Arguments = arguments;
+
+            this.FragmentManager.BeginTransaction()
+                       .AddToBackStack("before_TaskFragment") // identificatore nel back stack
+                       .Replace(Resource.Id.ContentLayout, fragment, "TaskFragment")
+                       .Commit();
         }
 
         public override void OnDestroyView()

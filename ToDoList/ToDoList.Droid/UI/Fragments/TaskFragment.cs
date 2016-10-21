@@ -23,6 +23,9 @@ namespace ToDoList.Droid.UI.Fragments
         #endregion
 
         #region Widgets
+
+        private EditText _titleText;
+
         #endregion
 
         #region Constructors
@@ -51,6 +54,13 @@ namespace ToDoList.Droid.UI.Fragments
             View view = inflater.Inflate(Resource.Layout.FragmentTask, container, false);
 
             #endregion           
+
+            _titleText = view.FindViewById<EditText>(Resource.Id.TitleText);
+
+            Bundle bundle = this.Arguments;
+            int position = bundle.GetInt("id", 0);
+
+            _titleText.Text = "Title :: " + position.ToString();
 
             return view;
         }
