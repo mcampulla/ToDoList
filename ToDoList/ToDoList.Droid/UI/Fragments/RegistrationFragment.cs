@@ -14,6 +14,7 @@ namespace ToDoList.Droid.UI.Fragments
     using Android.Views;
     using Android.Widget;
 
+    #pragma warning disable CS4014
     public class RegistrationFragment : Android.Support.V4.App.Fragment
     {
         #region Inner Classes
@@ -23,6 +24,13 @@ namespace ToDoList.Droid.UI.Fragments
         #endregion
 
         #region Widgets
+
+        private Button LoginButton;
+        private Button RegisterButton;
+        private EditText Username;
+        private EditText Password;
+        private TextView Error;
+
         #endregion
 
         #region Constructors
@@ -50,14 +58,23 @@ namespace ToDoList.Droid.UI.Fragments
 
             View view = inflater.Inflate(Resource.Layout.FragmentRegistration , container, false);
 
-            #endregion           
+            #endregion
+
+            this.RegisterButton = view.FindViewById<Button>(Resource.Id.RegisterButton);
+            this.Username = view.FindViewById<EditText>(Resource.Id.UserText);
+            this.Password = view.FindViewById<EditText>(Resource.Id.PasswordText);
+            this.Error = view.FindViewById<TextView>(Resource.Id.ErrorLabel);
+
+            this.RegisterButton.Click += RegisterButton_Click; ;
 
             return view;
-        }
+        }     
 
         public override void OnDestroyView()
         {
             base.OnDestroyView();
+
+            this.RegisterButton.Click -= RegisterButton_Click; ;
         }
 
         #endregion
@@ -69,6 +86,33 @@ namespace ToDoList.Droid.UI.Fragments
         #endregion
 
         #region Event Handlers
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            // autenticazione con servizio rest e se ho risposta positiva navigare sulla task list
+            AppController.Register(this.Username.Text, this.Password.Text,
+                (user) =>
+                {
+                    this.Error.Visibility = ViewStates.Invisible;
+                    // qui vedi FragmentManager con nome corto ma preso dalla libreria support!
+                    this.FragmentManager.BeginTransaction()
+                        .AddToBackStack("before_TaskListFragment") // identificatore nel back stack
+                        .Replace(Resource.Id.ContentLayout, new TaskListFragment(), "TaskListFragment")
+                        .Commit();
+
+                },
+                (error) =>
+                {
+                    this.Error.Text = error;
+                    this.Error.Visibility = ViewStates.Visible;
+                },
+                (exception) =>
+                {
+                    this.Error.Text = exception.Message;
+                    this.Error.Visibility = ViewStates.Visible;
+                });
+        }
+
         #endregion
     }
 }

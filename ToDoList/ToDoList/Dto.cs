@@ -1,4 +1,4 @@
-﻿namespace AdMaiora.Listy.Api
+﻿namespace ToDoList
 {
     using System;
     

@@ -31,6 +31,14 @@
             p1:id="@+id/LoginButton"
             p1:layout_below="@+id/PasswordText"
             p1:layout_centerHorizontal="true" />
+        <TextView
+            p1:text="Text"
+            p1:layout_width="wrap_content"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/ErrorLabel"
+            p1:layout_below="@+id/LoginButton"
+            p1:layout_centerHorizontal="true"
+            p1:visibility="invisible" />
     </RelativeLayout>
     <Button
         p1:text="Register"
