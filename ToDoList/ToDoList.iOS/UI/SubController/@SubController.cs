@@ -1,4 +1,4 @@
-namespace AdMaiora.Chatty
+namespace ToDoList.iOS
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace AdMaiora.Chatty
     using Foundation;
     using UIKit;
 
-    public partial class _ViewController : UIViewController
+    public partial class _SubController : UIViewController
     {
         #region Inner Classes
         #endregion
@@ -18,8 +18,8 @@ namespace AdMaiora.Chatty
 
         #region Constructors
 
-        public _ViewController()
-            : base("_ViewController", null)
+        public _SubController()
+            : base("_SubController", null)
         {
         }
 
@@ -33,14 +33,19 @@ namespace AdMaiora.Chatty
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
 
             #region Designer Stuff
             #endregion
         }
 
-        public override void ViewDidUnload()
+        public override void ViewWillDisappear(bool animated)
         {
-            base.ViewDidUnload();
+            base.ViewWillDisappear(animated);
         }
 
         #endregion

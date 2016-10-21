@@ -1,4 +1,4 @@
-namespace AdMaiora.Chatty
+﻿namespace ToDoList.iOS
 {
     using System;
     using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace AdMaiora.Chatty
     using Foundation;
     using UIKit;
 
-    public partial class _SubController : UIViewController
+    public partial class RegistrationViewController : UIViewController
     {
         #region Inner Classes
         #endregion
@@ -18,8 +18,8 @@ namespace AdMaiora.Chatty
 
         #region Constructors
 
-        public _SubController()
-            : base("_SubController", null)
+        public RegistrationViewController()
+            : base("RegistrationViewController", null)
         {
         }
 
@@ -41,6 +41,8 @@ namespace AdMaiora.Chatty
 
             #region Designer Stuff
             #endregion
+
+            this.NavigationController.SetNavigationBarHidden(false, false);
         }
 
         public override void ViewWillDisappear(bool animated)

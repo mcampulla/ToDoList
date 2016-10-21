@@ -17,7 +17,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOo-tR-w5E">
@@ -63,7 +63,7 @@
                         <constraint firstItem="PEw-m7-Q7N" firstAttribute="centerX" secondItem="dOo-tR-w5E" secondAttribute="centerX" id="iRg-LY-dgP"/>
                         <constraint firstItem="cis-b4-1GQ" firstAttribute="bottom" secondItem="zxZ-iR-M2d" secondAttribute="top" constant="-10" id="rfA-dR-Jy6"/>
                         <constraint firstItem="cis-b4-1GQ" firstAttribute="width" secondItem="dOo-tR-w5E" secondAttribute="width" id="rjD-8f-PG2"/>
-                        <constraint firstAttribute="bottom" secondItem="PEw-m7-Q7N" secondAttribute="bottom" constant="10" id="tlx-4l-7hF"/>
+                        <constraint firstAttribute="bottom" secondItem="PEw-m7-Q7N" secondAttribute="bottom" constant="70" id="tlx-4l-7hF"/>
                         <constraint firstItem="cis-b4-1GQ" firstAttribute="top" secondItem="xtG-KJ-8Rm" secondAttribute="bottom" constant="8" symbolic="YES" id="vCX-wr-GFS"/>
                     </constraints>
                 </view>
@@ -71,10 +71,10 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dOo-tR-w5E" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="F3g-Pv-bOz"/>
-                <constraint firstItem="dOo-tR-w5E" firstAttribute="top" secondItem="2" secondAttribute="top" id="K4Z-pP-O7R"/>
+                <constraint firstItem="dOo-tR-w5E" firstAttribute="top" secondItem="2" secondAttribute="top" constant="60" id="K4Z-pP-O7R"/>
                 <constraint firstItem="dOo-tR-w5E" firstAttribute="height" secondItem="2" secondAttribute="height" id="nIz-lW-P4R"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>

@@ -136,41 +136,54 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="MainViewController.cs" />
-    <Compile Include="MainViewController.designer.cs">
-      <DependentUpon>MainViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SplashViewController.cs" />
-    <Compile Include="SplashViewController.designer.cs">
-      <DependentUpon>SplashViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginViewController.cs" />
-    <Compile Include="LoginViewController.designer.cs">
-      <DependentUpon>LoginViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaskViewController.cs" />
-    <Compile Include="TaskViewController.designer.cs">
-      <DependentUpon>TaskViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrationViewController.cs" />
-    <Compile Include="RegistrationViewController.designer.cs">
-      <DependentUpon>RegistrationViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaskListViewController.cs" />
-    <Compile Include="TaskListViewController.designer.cs">
+    <Compile Include="UI\Sources\UIItemListViewSource.cs" />
+    <Compile Include="UI\Widgets\UIItemListView.cs" />
+    <Compile Include="UI\SubController\TaskListViewController.cs" />
+    <Compile Include="UI\SubController\TaskListViewController.designer.cs">
       <DependentUpon>TaskListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SubController\RegistrationViewController.cs" />
+    <Compile Include="UI\SubController\RegistrationViewController.designer.cs">
+      <DependentUpon>RegistrationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SubController\TaskViewController.cs" />
+    <Compile Include="UI\SubController\TaskViewController.designer.cs">
+      <DependentUpon>TaskViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SubController\LoginViewController.cs" />
+    <Compile Include="UI\SubController\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainController\MainViewController.cs" />
+    <Compile Include="UI\MainController\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainController\SplashViewController.cs" />
+    <Compile Include="UI\MainController\SplashViewController.designer.cs">
+      <DependentUpon>SplashViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainController\%40ViewController.cs" />
+    <Compile Include="UI\SubController\%40SubController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Layouts\" />
+    <Folder Include="UI\MainController\" />
+    <Folder Include="UI\SubController\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\Layouts\LoginViewController.xib" />
-    <InterfaceDefinition Include="Resources\Layouts\MainViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\SplashViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\TaskListViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\RegistrationViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\TaskViewController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UI\.DS_Store" />
+    <BundleResource Include="Resources\UI\Activity\%40Activity.cs" />
+    <BundleResource Include="Resources\UI\Activity\MainActivity.axml" />
+    <BundleResource Include="Resources\UI\Adapters\ItemRecyclerAdapter.cs" />
+    <BundleResource Include="Resources\UI\Fragments\%40Fragment.cs" />
+    <BundleResource Include="Resources\UI\Widgets\ItemRecyclerView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
