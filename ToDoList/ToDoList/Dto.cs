@@ -17,6 +17,7 @@
         public class TodoItem
         {
             public int TodoItemId;
+            public int UserId;
             public string Title;
             public string Description;
             public DateTime? CreationDate;

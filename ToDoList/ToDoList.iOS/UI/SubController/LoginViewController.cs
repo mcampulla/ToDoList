@@ -8,6 +8,7 @@
     using Foundation;
     using UIKit;
 
+    #pragma warning disable CS4014
     public partial class LoginViewController : UIViewController
     {
         #region Inner Classes
@@ -67,7 +68,29 @@
 
         void LoginButton_TouchUpInside (object sender, EventArgs e)
         {
-            this.NavigationController.PushViewController(new TaskListViewController(), true);
+            ((MainViewController)this.ParentViewController).BlockUI();
+
+            AppController.Login(this.UsernameText.Text, this.PasswordText.Text,
+              (user) =>
+              {
+                  this.NavigationController.PushViewController(new TaskListViewController(), true);
+                  ((MainViewController)this.ParentViewController).UnBlockUI();
+              },
+              (error) =>
+              {
+                  //this.Error.Text = error;
+                  //this.Error.Visibility = ViewStates.Visible;
+                  ((MainViewController)this.ParentViewController).UnBlockUI();
+              },
+              (exception) =>
+              {
+                  //this.Error.Text = exception.Message;
+                  //this.Error.Visibility = ViewStates.Visible;
+                  ((MainViewController)this.ParentViewController).UnBlockUI();
+              });
+
+
+            
         }
 
         void RegisterButton_TouchUpInside (object sender, EventArgs e)

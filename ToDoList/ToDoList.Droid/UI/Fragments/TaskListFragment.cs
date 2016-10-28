@@ -105,6 +105,7 @@ namespace ToDoList.Droid.UI.Fragments
         {
             base.OnCreate(savedInstanceState);
 
+            this.HasOptionsMenu = true;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -114,6 +115,9 @@ namespace ToDoList.Droid.UI.Fragments
             View view = inflater.Inflate(Resource.Layout.FragmentTaskList, container, false);
 
             #endregion           
+
+            ((Android.Support.V7.App.AppCompatActivity)this.Activity).SupportActionBar.Show();
+            ((Android.Support.V7.App.AppCompatActivity)this.Activity).SupportActionBar.Title = "My Task List";            
 
             _taskList = view.FindViewById<RecyclerView>(Resource.Id.TaskList);
             _adapter = new TaskListAdapter(new [] {
@@ -161,6 +165,24 @@ namespace ToDoList.Droid.UI.Fragments
         public override void OnDestroyView()
         {
             base.OnDestroyView();
+        }
+
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        {
+            base.OnCreateOptionsMenu(menu, inflater);
+            menu.Add("New").SetShowAsAction(ShowAsAction.Always);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case 0:
+                    //AppController.AddTask(new Model.TaskItem() { item });
+                    return true;
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
         }
 
         #endregion

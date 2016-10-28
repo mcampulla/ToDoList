@@ -36,6 +36,8 @@ namespace ToDoList.Droid.UI.Activity
         #endregion
 
         #region Widgets
+        private FrameLayout _loadLayout;
+        private Android.Support.V7.Widget.Toolbar _toolbar;
         #endregion
 
         #region Constructors
@@ -60,6 +62,15 @@ namespace ToDoList.Droid.UI.Activity
 
             SetContentView(Resource.Layout.ActivityMain);
 
+            //_toolbar = this.FindViewById(Resource.Id.Toolbar) as Android.Support.V7.Widget.Toolbar;
+            //this.SetSupportActionBar(_toolbar);
+
+            _loadLayout = this.FindViewById<FrameLayout>(Resource.Id.LoadLayout);
+            _loadLayout.Focusable = true;
+            _loadLayout.FocusableInTouchMode = true;
+            _loadLayout.Clickable = true;
+            _loadLayout.Visibility = ViewStates.Gone;
+
             #endregion
 
             // todo: controllare se si trova in situazione pulita da zero
@@ -78,6 +89,17 @@ namespace ToDoList.Droid.UI.Activity
         #endregion
 
         #region Public Methods
+
+        public void BlockUI()
+        {
+            _loadLayout.Visibility = ViewStates.Visible;
+        }
+
+        public void UnBlockUI()
+        {
+            _loadLayout.Visibility = ViewStates.Gone;
+        }
+
         #endregion
 
         #region Methods

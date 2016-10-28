@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="AppController.cs" />
     <Compile Include="Dto.cs" />
+    <Compile Include="Model\TaskItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

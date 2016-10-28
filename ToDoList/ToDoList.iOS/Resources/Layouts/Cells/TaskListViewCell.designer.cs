@@ -13,13 +13,13 @@ namespace ToDoList.iOS
 	partial class TaskListViewCell
 	{
 		[Outlet]
-		UIKit.UILabel BodyLabel { get; set; }
+		public UIKit.UILabel BodyLabel { get; set; }
 
 		[Outlet]
-		UIKit.UIButton EditButton { get; set; }
+        public UIKit.UIButton EditButton { get; set; }
 
 		[Outlet]
-		UIKit.UILabel TitleLabel { get; set; }
+        public UIKit.UILabel TitleLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -13,8 +13,9 @@ namespace ToDoList.Droid.UI.Fragments
     using Android.Util;
     using Android.Views;
     using Android.Widget;
+    using Activity;
 
-    #pragma warning disable CS4014
+#pragma warning disable CS4014
     public class LoginFragment : Android.Support.V4.App.Fragment
     {
         #region Inner Classes
@@ -61,6 +62,8 @@ namespace ToDoList.Droid.UI.Fragments
 
             #endregion           
 
+            ((Android.Support.V7.App.AppCompatActivity)this.Activity).SupportActionBar.Hide();
+
             this.LoginButton = view.FindViewById<Button>(Resource.Id.LoginButton);
             this.RegisterButton = view.FindViewById<Button>(Resource.Id.RegisterButton);
             this.Username = view.FindViewById<EditText>(Resource.Id.UserText);
@@ -93,9 +96,11 @@ namespace ToDoList.Droid.UI.Fragments
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            ((MainActivity)this.Activity).BlockUI();
+
             // autenticazione con servizio rest e se ho risposta positiva navigare sulla task list
             AppController.Login(this.Username.Text, this.Password.Text,
-                (user) => 
+                (user) =>
                 {
                     this.Error.Visibility = ViewStates.Invisible;
                     // qui vedi FragmentManager con nome corto ma preso dalla libreria support!
@@ -103,17 +108,20 @@ namespace ToDoList.Droid.UI.Fragments
                         .AddToBackStack("before_TaskListFragment") // identificatore nel back stack
                         .Replace(Resource.Id.ContentLayout, new TaskListFragment(), "TaskListFragment")
                         .Commit();
+                    ((MainActivity)this.Activity).UnBlockUI();
 
                 }, 
                 (error) => 
                 {
                     this.Error.Text = error;
                     this.Error.Visibility = ViewStates.Visible;
+                    ((MainActivity)this.Activity).UnBlockUI();
                 },
                 (exception) =>
                 {
                     this.Error.Text = exception.Message;
                     this.Error.Visibility = ViewStates.Visible;
+                    ((MainActivity)this.Activity).UnBlockUI();
                 });
         }
 
