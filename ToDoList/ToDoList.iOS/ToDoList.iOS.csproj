@@ -205,6 +205,7 @@
     <InterfaceDefinition Include="Resources\Layouts\TaskListViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\RegistrationViewController.xib" />
     <InterfaceDefinition Include="Resources\Layouts\TaskViewController.xib" />
+    <InterfaceDefinition Include="Resources\Layouts\Cells\TaskListViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\UI\.DS_Store" />
@@ -213,6 +214,13 @@
     <BundleResource Include="Resources\UI\Adapters\ItemRecyclerAdapter.cs" />
     <BundleResource Include="Resources\UI\Fragments\%40Fragment.cs" />
     <BundleResource Include="Resources\UI\Widgets\ItemRecyclerView.cs" />
+    <BundleResource Include="Resources\Layouts\Cells\TaskListViewCell.cs" />
+    <BundleResource Include="Resources\Layouts\Cells\TaskListViewCell.designer.cs">
+      <DependentUpon>TaskListViewCell.cs</DependentUpon>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Layouts\Cells\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="cxk-wN-pdQ" customClass="TaskListViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <frame key="frameInset" width="320" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gB-ZG-kcC">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jq1-xS-veL">
+                        <state key="normal" title="Edit"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_body_content_" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bc-WD-72R">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="6bc-WD-72R" secondAttribute="trailing" constant="-8" id="448-FV-Wbz"/>
+                    <constraint firstItem="2gB-ZG-kcC" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="topMargin" constant="10" id="5Dm-AL-HaX"/>
+                    <constraint firstItem="2gB-ZG-kcC" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leadingMargin" constant="-8" id="Fd3-Hr-NXC"/>
+                    <constraint firstItem="6bc-WD-72R" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leadingMargin" constant="-8" id="cFO-l2-eaT"/>
+                    <constraint firstAttribute="topMargin" secondItem="Jq1-xS-veL" secondAttribute="top" id="hdW-jc-FUe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="6bc-WD-72R" secondAttribute="bottom" constant="8" id="oqd-af-ySY"/>
+                    <constraint firstItem="2gB-ZG-kcC" firstAttribute="trailing" secondItem="6bc-WD-72R" secondAttribute="trailing" id="u9A-RB-60p"/>
+                    <constraint firstItem="6bc-WD-72R" firstAttribute="top" secondItem="2gB-ZG-kcC" secondAttribute="bottom" constant="8" id="whb-JM-1mA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jq1-xS-veL" secondAttribute="trailing" id="xkd-GK-jnQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="BodyLabel" destination="6bc-WD-72R" id="Fpg-T0-Nc1"/>
+                <outlet property="EditButton" destination="Jq1-xS-veL" id="8F0-33-kdE"/>
+                <outlet property="TitleLabel" destination="2gB-ZG-kcC" id="0M7-FN-PHk"/>
+            </connections>
+            <point key="canvasLocation" x="77" y="74.5"/>
+        </tableViewCell>
+    </objects>
+</document>
